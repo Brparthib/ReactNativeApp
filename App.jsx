@@ -1,10 +1,11 @@
-import {View, Text} from 'react-native';
 import React from 'react';
+import {View} from 'react-native';
+import Login from './src/components/register/Login';
 
 const App = () => {
   return (
     <View>
-      <Text>Wow! Thats Great</Text>
+      <Login />
     </View>
   );
 };
