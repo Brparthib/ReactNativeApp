@@ -1,15 +1,19 @@
 import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import React, {useState} from 'react';
+import { styles } from '../components/style';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const handleLogin = () => {
+    console.log('Email: ', email);
+    console.log('Password: ', password);
+    setEmail('');
+    setPassword('');
+  };
   return (
     <View className="bg-primary h-full relative">
-      <Image
-        className="absolute"
-        source={require('../assets/vector1.png')}
-      />
+      <Image className="absolute" source={require('../assets/vector1.png')} />
       <Image
         className="absolute right-0"
         source={require('../assets/vector2.png')}
@@ -48,7 +52,9 @@ const LoginScreen = () => {
             />
           </View>
           <View>
-            <TouchableOpacity className="bg-primary py-[15px] rounded-full w-full">
+            <TouchableOpacity
+              onPress={handleLogin}
+              className="bg-primary py-[15px] rounded-full w-full">
               <Text className="text-center text-[#ffffff] text-[16px] font-600">
                 Log in
               </Text>
@@ -57,17 +63,12 @@ const LoginScreen = () => {
         </View>
 
         <View className="gap-4">
-          <View style={styles.container}>
+          <View style={styles.loginContainer}>
             <View style={styles.line} />
             <Text style={styles.text}>Or, Log in with</Text>
             <View style={styles.line} />
           </View>
-          <View
-            style={{
-              flexDirection: 'row',
-              flexWrap: 'wrap',
-              justifyContent: 'space-between',
-            }}>
+          <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.button}>
               <Image
                 style={styles.icon}
@@ -85,41 +86,6 @@ const LoginScreen = () => {
       </View>
     </View>
   );
-};
-
-const styles = {
-  container: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginVertical: 20,
-    width: 258,
-    alignSelf: 'center',
-  },
-  line: {
-    flex: 1,
-    height: 1,
-    backgroundColor: '#818688',
-  },
-  text: {
-    marginHorizontal: 13,
-    fontSize: 14,
-    color: '#818688',
-  },
-  button: {
-    backgroundColor: '#ffffff',
-    borderColor: '#EAEAEA',
-    borderWidth: 1,
-    paddingVertical: 15,
-    borderRadius: 12,
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexBasis: '48%',
-  },
-  icon: {
-    width: 22,
-    height: 22,
-  },
 };
 
 export default LoginScreen;
