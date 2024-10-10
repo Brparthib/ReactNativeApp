@@ -1,11 +1,11 @@
 import React from 'react';
 import {View} from 'react-native';
-import Login from './src/components/register/Login';
+import LoginScreen from './src/screens/LoginScreen';
 
 const App = () => {
   return (
     <View>
-      <Login />
+      <LoginScreen />
     </View>
   );
 };
