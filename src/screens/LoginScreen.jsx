@@ -80,13 +80,13 @@ const LoginScreen = () => {
           </View>
         </View>
 
-        <View className="gap-4 mt-[20px]">
+        <View>
           <View style={styles.loginContainer}>
             <View style={styles.line} />
             <Text style={styles.text}>Or, Log in with</Text>
             <View style={styles.line} />
           </View>
-          <View style={styles.buttonContainer}>
+          <View style={styles.loginButtonContainer}>
             <TouchableOpacity style={styles.button}>
               <Image
                 style={styles.icon}

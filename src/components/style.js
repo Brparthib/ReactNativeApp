@@ -4,6 +4,7 @@ const {height: screenHeight} = Dimensions.get('window');
 const windowWidth = Dimensions.get('window').width;
 
 export const styles = StyleSheet.create({
+  // login screen css start here
   loginContainer: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -22,9 +23,9 @@ export const styles = StyleSheet.create({
     fontSize: 14,
     color: '#818688',
   },
-  buttonContainer: {
+  loginButtonContainer: {
     flexDirection: 'row',
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
   button: {
@@ -53,6 +54,7 @@ export const styles = StyleSheet.create({
     right: 12,
   },
 
+  // contact screen css start here
   contactTitleContainer: {
     flexDirection: 'row',
     justifyContent: 'between',
@@ -65,7 +67,7 @@ export const styles = StyleSheet.create({
     height: 60,
     paddingTop: 12,
     paddingHorizontal: 20,
-    position: 'relative',
+    backgroundColor: '#ffffff',
   },
 
   searchInputContainer: {
@@ -95,7 +97,6 @@ export const styles = StyleSheet.create({
 
   listContainer: {
     height: screenHeight - 144,
-    marginBottom: 1,
     backgroundColor: '#EAEAEA',
   },
 
@@ -134,6 +135,7 @@ export const styles = StyleSheet.create({
     width: 20,
   },
 
+  // contact details screen css start here
   arrowDeleteButton: {
     flexDirection: 'row',
     alignItems: 'center',

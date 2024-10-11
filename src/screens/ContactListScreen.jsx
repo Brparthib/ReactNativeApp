@@ -2,12 +2,12 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import ContactList from '../components/ContactList';
 import {styles} from '../components/style';
-import SearchBar from '../components/SearchBar';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const ContactScreen = () => {
+const ContactListScreen = () => {
   return (
     <View className="bg-white">
+      {/* contact screen header */}
       <View style={styles.contactTitleContainer}>
         <View className="w-8/12">
           <Text className="text-[24px] text-secondary font-bold">Contacts</Text>
@@ -24,13 +24,12 @@ const ContactScreen = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View style={styles.searchBarContainer}>
-        <SearchBar />
-      </View>
+
+      {/* all contact list */}
       <View style={styles.listContainer}>
         <ContactList />
       </View>
     </View>
   );
 };
-export default ContactScreen;
+export default ContactListScreen;
