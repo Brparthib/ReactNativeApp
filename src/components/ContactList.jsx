@@ -7,7 +7,7 @@ const ContactList = () => {
   return (
     <ScrollView>
         {
-            users.map((user) => <ContactItem name={user.name} email={user.email} />)
+            users.map((user) => <ContactItem key={user.id} name={user.name} email={user.email} />)
         }
     </ScrollView>
   );

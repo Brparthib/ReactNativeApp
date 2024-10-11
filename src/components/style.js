@@ -42,6 +42,17 @@ export const styles = StyleSheet.create({
     height: 22,
   },
 
+  passwordInputContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    position: 'relative',
+  },
+
+  passwordEyeIcon: {
+    position: 'absolute',
+    right: 12,
+  },
+
   contactTitleContainer: {
     flexDirection: 'row',
     justifyContent: 'between',
@@ -121,5 +132,31 @@ export const styles = StyleSheet.create({
 
   contactDotsIcon: {
     width: 20,
+  },
+
+  arrowDeleteButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 12,
+  },
+
+  deleteButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+
+  saveShareButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    width: windowWidth - 48,
+  },
+
+  saveShareButtonText: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
   },
 });

@@ -2,16 +2,19 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {styles} from './style';
+import { getInitials } from '../Utils/getinitials';
 
 const ContactItem = ({name, email}) => {
   return (
     <View style={styles.contactItem}>
       <View style={styles.contactItemUser}>
-        <Text className="text-[#AA9113] text-[14px] font-600">PB</Text>
+        <Text className="text-[#AA9113] text-[14px] font-semibold">
+          {getInitials(name)}
+        </Text>
       </View>
       <View style={styles.contactItemText}>
-        <Text className="text-[16px] font-[600] text-secondary">{name}</Text>
-        <Text className="text-[12px] font-[400] text-[#787573]">{email}</Text>
+        <Text className="text-[16px] font-semibold text-secondary">{name}</Text>
+        <Text className="text-[12px] font-normal text-[#787573]">{email}</Text>
       </View>
       <View style={styles.contactDotsIcon}>
         <TouchableOpacity>

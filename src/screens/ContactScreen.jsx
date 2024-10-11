@@ -10,20 +10,17 @@ const ContactScreen = () => {
     <View className="bg-white">
       <View style={styles.contactTitleContainer}>
         <View className="w-8/12">
-          <Text className="text-[24px] text-secondary font-700">Contacts</Text>
-          <Text className="text-[12px] text-[#787573] 400">
+          <Text className="text-[24px] text-secondary font-bold">Contacts</Text>
+          <Text className="text-[12px] text-[#787573] font-normal">
             Total 25 Contacts
           </Text>
         </View>
         <View style={styles.iconButton} className="w-4/12">
-          <MaterialIcons
-            className="ml-2"
-            name="logout"
-            size={20}
-            color="#FB5200"
-          />
+          <MaterialIcons name="logout" size={20} color="#FB5200" />
           <TouchableOpacity>
-            <Text className="text-primary text-[15px] font-600">Logout</Text>
+            <Text className="text-primary text-[15px] font-semibold ml-1">
+              Logout
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
