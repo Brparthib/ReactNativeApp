@@ -11,8 +11,8 @@ module.exports = {
         lemon_chiffon: '#FEF3C7',
       },
       fontFamily: {
-        // ubuntu: ["Ubuntu", "sans-serif"],
-        // roboto: ["Roboto", "sans-serif"],
+        inter: ['Inter'],
+        sora: ['Sora'],
       },
     },
   },

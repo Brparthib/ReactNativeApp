@@ -5,11 +5,21 @@ import AuthContext from '../context/AuthContext';
 import LoginScreen from '../screens/LoginScreen';
 import ContactListScreen from '../screens/ContactListScreen';
 import ContactDetailScreen from '../screens/ContactDetailScreen';
+import { ActivityIndicator, View } from 'react-native';
+
 
 const Stack = createNativeStackNavigator();
 
 const Route = () => {
-  const {isLoggedIn} = useContext(AuthContext);
+  const {isLoggedIn, isLoading} = useContext(AuthContext);
+
+  if (isLoading) {
+    return (
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+        <ActivityIndicator size="large" color="#FB5200" />
+      </View>
+    );
+  }
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       {isLoggedIn ? (

@@ -1,9 +1,15 @@
-import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import React, {useContext, useState} from 'react';
 import {styles} from '../components/style';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import AuthContext from '../context/AuthContext';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -32,8 +38,11 @@ const LoginScreen = () => {
   };
 
   return (
-    <View className="bg-primary h-full relative">
-      <Image className="absolute" source={require('../assets/images/vector1.png')} />
+    <View className="bg-primary h-screen relative">
+      <Image
+        className="absolute"
+        source={require('../assets/images/vector1.png')}
+      />
       <Image
         className="absolute right-0"
         source={require('../assets/images/vector2.png')}
@@ -53,7 +62,7 @@ const LoginScreen = () => {
               Email address
             </Text>
             <TextInput
-              className="border-2 border-[#D1D0D0] rounded-[10px]"
+              className="border-2 border-[#D1D0D0] px-[12px] rounded-[10px]"
               value={email}
               onChangeText={setEmail}
               keyboardType="email-address"
@@ -66,7 +75,7 @@ const LoginScreen = () => {
             </Text>
             <View style={styles.passwordInputContainer}>
               <TextInput
-                className="border-2 border-[#D1D0D0] rounded-[10px] w-full"
+                className="border-2 border-[#D1D0D0] px-[12px] rounded-[10px] w-full"
                 value={password}
                 onChangeText={setPassword}
                 secureTextEntry={!isPasswordVisible}

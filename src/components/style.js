@@ -25,7 +25,6 @@ export const styles = StyleSheet.create({
   },
   loginButtonContainer: {
     flexDirection: 'row',
-    // flexWrap: 'wrap',
     justifyContent: 'space-between',
   },
   button: {
@@ -91,12 +90,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     paddingLeft: 28,
     fontSize: 14,
+    fontFamily: 'Inter',
     fontWeight: '400',
     color: '#000',
   },
 
   listContainer: {
-    height: screenHeight - 144,
+    height: screenHeight - 204,
     backgroundColor: '#EAEAEA',
   },
 
@@ -104,7 +104,6 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    width: 100,
   },
 
   contactItem: {

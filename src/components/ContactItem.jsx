@@ -12,13 +12,13 @@ const ContactItem = ({user}) => {
   return (
     <View style={styles.contactItem}>
       <View style={styles.contactItemUser}>
-        <Text className="text-[#AA9113] text-[14px] font-semibold">
+        <Text className="text-[#AA9113] text-[14px] font-inter font-semibold">
           {getInitials(name)}
         </Text>
       </View>
       <View style={styles.contactItemText}>
-        <Text className="text-[16px] font-semibold text-secondary">{name}</Text>
-        <Text className="text-[12px] font-normal text-[#787573]">{email}</Text>
+        <Text className="text-[16px] font-sora font-semibold text-secondary">{name}</Text>
+        <Text className="text-[12px] font-inter font-normal text-[#787573]">{email}</Text>
       </View>
       <View style={styles.contactDotsIcon}>
         <TouchableOpacity

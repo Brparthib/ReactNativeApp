@@ -51,8 +51,8 @@ const ContactListScreen = () => {
       {/* contact screen header */}
       <View style={styles.contactTitleContainer}>
         <View className="w-8/12">
-          <Text className="text-[24px] text-secondary font-bold">Contacts</Text>
-          <Text className="text-[12px] text-[#787573] font-normal">
+          <Text className="text-[24px] text-secondary font-sora font-bold">Contacts</Text>
+          <Text className="text-[12px] text-[#787573] font-inter font-normal">
             Total {filteredContacts.length} Contacts
           </Text>
         </View>
@@ -61,7 +61,7 @@ const ContactListScreen = () => {
           className="w-4/12"
           onPress={handleLogout}>
           <MaterialIcons name="logout" size={20} color="#FB5200" />
-          <Text className="text-primary text-[15px] font-semibold ml-1">
+          <Text className="text-primary text-[15px] font-inter font-semibold ml-1">
             Logout
           </Text>
         </TouchableOpacity>
@@ -70,6 +70,7 @@ const ContactListScreen = () => {
       {/* all contact list */}
       <View style={styles.listContainer}>
         <View className="bg-white">
+          {/* search bar  */}
           <View style={styles.searchBarContainer}>
             <View style={styles.searchInputContainer}>
               <Feather
