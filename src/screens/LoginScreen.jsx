@@ -1,14 +1,27 @@
 import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {styles} from '../components/style';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import AuthContext from '../context/AuthContext';
+import { useNavigation } from '@react-navigation/native';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {setIsLoggedIn} = useContext(AuthContext);
+  const navigation = useNavigation();
+
   const handleLogin = () => {
-    console.log('Email: ', email);
-    console.log('Password: ', password);
+    const dummyEmail = 'user@gmail.com';
+    const dummyPassword = '123';
+
+    if (email === dummyEmail && password === dummyPassword) {
+      setIsLoggedIn(true);
+      navigation.navigate('ContactList');
+    } else {
+      alert('Invalid email or password');
+    }
+
     setEmail('');
     setPassword('');
   };
@@ -20,14 +33,14 @@ const LoginScreen = () => {
 
   return (
     <View className="bg-primary h-full relative">
-      <Image className="absolute" source={require('../assets/vector1.png')} />
+      <Image className="absolute" source={require('../assets/images/vector1.png')} />
       <Image
         className="absolute right-0"
-        source={require('../assets/vector2.png')}
+        source={require('../assets/images/vector2.png')}
       />
       <Image
         className="absolute right-5 top-[110]"
-        source={require('../assets/vector3.png')}
+        source={require('../assets/images/vector3.png')}
       />
       <View className="absolute bottom-0 w-full pt-[24px] pb-[48px] px-[20px] bg-[#ffffff] rounded-t-[12px]">
         <Text className="text-[24px] font-bold text-black">
@@ -90,13 +103,13 @@ const LoginScreen = () => {
             <TouchableOpacity style={styles.button}>
               <Image
                 style={styles.icon}
-                source={require('../assets/Google.png')}
+                source={require('../assets/images/Google.png')}
               />
             </TouchableOpacity>
             <TouchableOpacity style={styles.button}>
               <Image
                 style={styles.icon}
-                source={require('../assets/Facebook.png')}
+                source={require('../assets/images/Facebook.png')}
               />
             </TouchableOpacity>
           </View>

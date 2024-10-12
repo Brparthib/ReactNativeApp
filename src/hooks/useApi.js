@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
 const useApi = () => {
@@ -8,7 +8,8 @@ const useApi = () => {
 
   const url = 'https://jsonplaceholder.typicode.com/users';
 
-  const fetchData = async (id = null) => {
+  // Memoize fetchData to avoid re-creation on each render
+  const fetchData = useCallback(async (id = null) => {
     setLoading(true);
     const endpoint = id ? `${url}/${id}` : url;
     try {
@@ -19,11 +20,11 @@ const useApi = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   return { data, loading, error, fetchData };
 };

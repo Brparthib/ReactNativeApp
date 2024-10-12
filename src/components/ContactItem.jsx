@@ -3,9 +3,12 @@ import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import {styles} from './style';
 import {getInitials} from '../Utils/getinitials';
+import {useNavigation} from '@react-navigation/native';
 
 const ContactItem = ({user}) => {
-  const {name, email} = user;
+  const {id, name, email} = user;
+  const navigation = useNavigation();
+
   return (
     <View style={styles.contactItem}>
       <View style={styles.contactItemUser}>
@@ -18,7 +21,10 @@ const ContactItem = ({user}) => {
         <Text className="text-[12px] font-normal text-[#787573]">{email}</Text>
       </View>
       <View style={styles.contactDotsIcon}>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate('ContactDetails', {id: id})
+          }>
           <MaterialCommunityIcons
             name="dots-vertical"
             size={20}

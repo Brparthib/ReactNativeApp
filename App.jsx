@@ -1,16 +1,15 @@
 import React from 'react';
-import {View} from 'react-native';
-import LoginScreen from './src/screens/LoginScreen';
-import ContactListScreen from './src/screens/ContactListScreen';
-import ContactDetailScreen from './src/screens/ContactDetailScreen';
+import {NavigationContainer} from '@react-navigation/native';
+import {AuthProvider} from './src/context/AuthContext';
+import Route from './src/routes/Route';
 
 const App = () => {
   return (
-    <View className="bg-white">
-      {/* <LoginScreen /> */}
-      <ContactListScreen />
-      {/* <ContactDetailScreen /> */}
-    </View>
+    <AuthProvider>
+      <NavigationContainer>
+        <Route />
+      </NavigationContainer>
+    </AuthProvider>
   );
 };
 
