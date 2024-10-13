@@ -1,10 +1,4 @@
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  Image,
-} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import React, {useContext, useState} from 'react';
 import {styles} from '../components/style';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -14,6 +8,8 @@ import {useNavigation} from '@react-navigation/native';
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const {setIsLoggedIn} = useContext(AuthContext);
   const navigation = useNavigation();
 
@@ -21,15 +17,26 @@ const LoginScreen = () => {
     const dummyEmail = 'user@gmail.com';
     const dummyPassword = '123';
 
-    if (email === dummyEmail && password === dummyPassword) {
-      setIsLoggedIn(true);
-      navigation.navigate('ContactList');
-    } else {
-      alert('Invalid email or password');
+    let valid = true;
+    setEmailError('');
+    setPasswordError('');
+
+    if (email !== dummyEmail) {
+      setEmailError('Invalid email address');
+      valid = false;
     }
 
-    setEmail('');
-    setPassword('');
+    if (password !== dummyPassword) {
+      setPasswordError('Invalid password');
+      valid = false;
+    }
+
+    if (valid) {
+      setIsLoggedIn(true);
+      navigation.navigate('ContactList');
+      setEmail('');
+      setPassword('');
+    }
   };
 
   const [isPasswordVisible, setPasswordVisible] = useState(false);
@@ -68,6 +75,13 @@ const LoginScreen = () => {
               keyboardType="email-address"
               autoCapitalize="none"
             />
+            <View>
+              {emailError ? (
+                <Text className="text-red-500 text-[12px] mt-1">
+                  {emailError}
+                </Text>
+              ) : null}
+            </View>
           </View>
           <View>
             <Text className="text-[14px] mb-2 font-semibold text-secondary">
@@ -89,6 +103,13 @@ const LoginScreen = () => {
                   color="#787573"
                 />
               </TouchableOpacity>
+            </View>
+            <View>
+              {passwordError ? (
+                <Text className="text-red-500 text-[12px] mt-1">
+                  {passwordError}
+                </Text>
+              ) : null}
             </View>
           </View>
           <View>

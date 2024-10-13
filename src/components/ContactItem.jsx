@@ -27,7 +27,7 @@ const ContactItem = ({user}) => {
           }>
           <MaterialCommunityIcons
             name="dots-vertical"
-            size={20}
+            size={24}
             color="#AAA7A6"
           />
         </TouchableOpacity>
