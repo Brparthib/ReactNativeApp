@@ -51,7 +51,9 @@ const ContactListScreen = () => {
       {/* contact screen header */}
       <View style={styles.contactTitleContainer}>
         <View className="w-8/12">
-          <Text className="text-[24px] text-secondary font-sora font-bold">Contacts</Text>
+          <Text className="text-[24px] text-secondary font-sora font-bold">
+            Contacts
+          </Text>
           <Text className="text-[12px] text-[#787573] font-inter font-normal">
             Total {filteredContacts.length} Contacts
           </Text>
@@ -88,6 +90,7 @@ const ContactListScreen = () => {
               />
             </View>
           </View>
+          {/* list of contacts */}
           <View className="bg-body">
             <FlatList
               data={filteredContacts}

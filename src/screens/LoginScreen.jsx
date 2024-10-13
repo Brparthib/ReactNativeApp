@@ -63,6 +63,7 @@ const LoginScreen = () => {
           Login to your account
         </Text>
 
+        {/* Login input  */}
         <View className="gap-y-4 my-[20px]">
           <View>
             <Text className="text-[14px] mb-2 font-semibold text-secondary">
@@ -123,6 +124,7 @@ const LoginScreen = () => {
           </View>
         </View>
 
+        {/* Social login  */}
         <View>
           <View style={styles.loginContainer}>
             <View style={styles.line} />

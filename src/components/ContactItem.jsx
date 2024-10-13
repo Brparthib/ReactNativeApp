@@ -17,14 +17,18 @@ const ContactItem = ({user}) => {
         </Text>
       </View>
       <View style={styles.contactItemText}>
-        <Text className="text-[16px] font-sora font-semibold text-secondary">{name}</Text>
-        <Text className="text-[12px] font-inter font-normal text-[#787573]">{email}</Text>
+        <Text className="text-[16px] font-sora font-semibold text-secondary">
+          {name}
+        </Text>
+        <Text className="text-[12px] font-inter font-normal text-[#787573]">
+          {email}
+        </Text>
       </View>
+
+      {/* three dots button */}
       <View style={styles.contactDotsIcon}>
         <TouchableOpacity
-          onPress={() =>
-            navigation.navigate('ContactDetails', {id: id})
-          }>
+          onPress={() => navigation.navigate('ContactDetails', {id: id})}>
           <MaterialCommunityIcons
             name="dots-vertical"
             size={24}

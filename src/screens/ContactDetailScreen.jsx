@@ -38,6 +38,7 @@ const ContactDetailScreen = ({route}) => {
 
   return (
     <View className="px-[20px]">
+      {/* arrow and delete button  */}
       <View style={styles.arrowDeleteButton}>
         <View>
           <TouchableOpacity onPress={() => navigation.goBack()}>
@@ -53,6 +54,8 @@ const ContactDetailScreen = ({route}) => {
           </TouchableOpacity>
         </View>
       </View>
+
+      {/* contact profile */}
       <View className="pt-[8px] pb-[16px]">
         <View className="w-[90px] h-[90px] rounded-full bg-lemon_chiffon flex justify-center items-center mx-auto">
           <Text className="text-[31.5px] text-[#AA9113] font-inter font-semibold">
@@ -71,6 +74,8 @@ const ContactDetailScreen = ({route}) => {
           </Text>
         </View>
       </View>
+
+      {/* save and share button  */}
       <View style={styles.saveShareButton}>
         <TouchableOpacity
           style={styles.saveShareButtonText}
@@ -89,6 +94,8 @@ const ContactDetailScreen = ({route}) => {
           </Text>
         </TouchableOpacity>
       </View>
+
+      {/* other information list of a contact */}
       <View className="border border-body rounded-[10px] mt-[16px]">
         <View className="py-[12px] px-[16px]">
           <Text className="text-[12px] text-[#787573] font-inter font-semibold">
